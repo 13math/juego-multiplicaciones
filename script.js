@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerElement = document.getElementById('timer');
 
     let multiplicand, multiplier;
-    let lives = 5; // Número inicial de vidas
+    let lives = 3; // Número inicial de vidas
     let score = 0; // Puntuación inicial
     let timeLeft = 300; // Tiempo en segundos (5 minutos)
 
