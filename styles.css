@@ -6,6 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f4f4f4;
+    font-size: 20px; /* Aumenta el tamaño de la fuente */
 }
 
 .container {
@@ -23,6 +24,7 @@ body {
 #answer {
     width: 60px;
     text-align: center;
+    font-size: 20px; /* Aumenta el tamaño de la fuente en el input */
 }
 
 #feedback {
@@ -33,4 +35,9 @@ body {
 #next {
     display: none;
     margin-top: 20px;
+}
+
+#timer, #lives, #score {
+    margin-bottom: 10px;
+    font-size: 18px;
 }
