@@ -35,9 +35,26 @@ body {
 #next {
     display: none;
     margin-top: 20px;
+    font-size: 18px; /* Aumenta el tamaño del botón */
+    padding: 10px 20px; /* Aumenta el tamaño del botón */
 }
 
-#timer, #lives, #score {
+#submit {
+    font-size: 18px; /* Aumenta el tamaño del botón */
+    padding: 10px 20px; /* Aumenta el tamaño del botón */
+}
+
+#timer, #score {
     margin-bottom: 10px;
     font-size: 18px;
+}
+
+#lives {
+    margin-bottom: 10px;
+}
+
+.heart {
+    color: red;
+    font-size: 24px; /* Tamaño del corazón */
+    margin: 0 5px;
 }
