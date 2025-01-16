@@ -26,7 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateLives() {
-        livesElement.textContent = `Vidas: ${lives}`;
+        // Actualiza la visualización de las vidas con corazones
+        livesElement.innerHTML = '';
+        for (let i = 0; i < lives; i++) {
+            const heart = document.createElement('span');
+            heart.classList.add('heart');
+            heart.innerHTML = '&#9829;';
+            livesElement.appendChild(heart);
+        }
         if (lives === 0) {
             alert('Has perdido todas tus vidas. El juego se reiniciará.');
             resetGame();
