@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerElement = document.getElementById('timer');
 
     let multiplicand, multiplier;
-    let lives = 3; // Número inicial de vidas
-    let score = 0; // Puntuación inicial
-    let timeLeft = 300; // Tiempo en segundos (5 minutos)
+    let lives = 3;
+    let score = 0;
+    let timeLeft = 300;
 
     function generateQuestion() {
         multiplicand = Math.floor(Math.random() * 10) + 1;
@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateLives() {
-        // Actualiza la visualización de las vidas con corazones
         livesElement.innerHTML = '';
         for (let i = 0; i < lives; i++) {
             const heart = document.createElement('span');
@@ -72,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (userAnswer === correctAnswer) {
             feedbackElement.textContent = '¡Correcto!';
             feedbackElement.style.color = 'green';
-            score += 10; // Incrementa la puntuación por respuesta correcta
+            score += 10;
             updateScore();
         } else {
             feedbackElement.textContent = `Incorrecto. La respuesta correcta es ${correctAnswer}.`;
@@ -87,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     nextButton.addEventListener('click', generateQuestion);
 
-    setInterval(updateTimer, 1000); // Actualiza el temporizador cada segundo
+    setInterval(updateTimer, 1000);
 
     resetGame();
 });
