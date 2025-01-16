@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerElement = document.getElementById('timer');
 
     let multiplicand, multiplier;
-    let lives = 3;
-    let score = 0;
-    let timeLeft = 300;
+    let lives = 3; // Número inicial de vidas
+    let score = 0; // Puntuación inicial
+    let timeLeft = 300; // Tiempo en segundos (5 minutos)
 
     function generateQuestion() {
         multiplicand = Math.floor(Math.random() * 10) + 1;
@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateLives() {
+        // Actualiza la visualización de las vidas con corazones
         livesElement.innerHTML = '';
         for (let i = 0; i < lives; i++) {
             const heart = document.createElement('span');
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             livesElement.appendChild(heart);
         }
         if (lives === 0) {
-            alert(`Has perdido todas tus vidas. Puntos totales: ${score}. El juego se reiniciará.`);
+            alert('Has perdido todas tus vidas. El juego se reiniciará.');
             resetGame();
         }
     }
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (timeLeft > 0) {
             timeLeft--;
         } else {
-            alert(`El tiempo ha terminado. Puntos totales: ${score}. El juego se reiniciará.`);
+            alert('El tiempo ha terminado. El juego se reiniciará.');
             resetGame();
         }
     }
@@ -71,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (userAnswer === correctAnswer) {
             feedbackElement.textContent = '¡Correcto!';
             feedbackElement.style.color = 'green';
-            score += 10;
+            score += 10; // Incrementa la puntuación por respuesta correcta
             updateScore();
         } else {
             feedbackElement.textContent = `Incorrecto. La respuesta correcta es ${correctAnswer}.`;
@@ -86,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     nextButton.addEventListener('click', generateQuestion);
 
-    setInterval(updateTimer, 1000);
+    setInterval(updateTimer, 1000); // Actualiza el temporizador cada segundo
 
     resetGame();
 });
