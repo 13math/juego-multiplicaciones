@@ -8,13 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const livesElement = document.getElementById('lives');
     const scoreElement = document.getElementById('score');
     const timerElement = document.getElementById('timer');
-    const fullscreenButton = document.getElementById('fullscreen');
-    const gameContainer = document.getElementById('game-container');
 
     let multiplicand, multiplier;
     let lives = 3; // Número inicial de vidas
     let score = 0; // Puntuación inicial
     let timeLeft = 300; // Tiempo en segundos (5 minutos)
+    let timerInterval;
 
     function generateQuestion() {
         multiplicand = Math.floor(Math.random() * 10) + 1;
@@ -25,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
         feedbackElement.textContent = '';
         nextButton.style.display = 'none';
         submitButton.style.display = 'inline';
+        answerInput.disabled = false;
+        answerInput.focus();
     }
 
     function updateLives() {
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             livesElement.appendChild(heart);
         }
         if (lives === 0) {
-            alert(`Has perdido todas tus vidas. El juego se reiniciará. Puntuación final: ${score}`);
+            alert('Has perdido todas tus vidas. El juego se reiniciará.');
             resetGame();
         }
     }
@@ -53,55 +54,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (timeLeft > 0) {
             timeLeft--;
         } else {
-            alert(`El tiempo ha terminado. El juego se reiniciará. Puntuación final: ${score}`);
+            alert('El tiempo ha terminado. El juego se reiniciará.');
             resetGame();
         }
     }
 
     function resetGame() {
+        clearInterval(timerInterval);
         lives = 3;
         score = 0;
         timeLeft = 300;
         updateLives();
         updateScore();
         generateQuestion();
+        timerInterval = setInterval(updateTimer, 1000); // Reinicia el temporizador
     }
 
     submitButton.addEventListener('click', () => {
         const userAnswer = parseInt(answerInput.value, 10);
-        const correctAnswer = multiplicand * multiplier;
-
-        if (userAnswer === correctAnswer) {
-            feedbackElement.textContent = '¡Correcto!';
-            feedbackElement.style.color = 'green';
-            score += 10; // Incrementa la puntuación por respuesta correcta
-            updateScore();
-        } else {
-            feedbackElement.textContent = `Incorrecto. La respuesta correcta es ${correctAnswer}.`;
-            feedbackElement.style.color = 'red';
-            lives--;
-            updateLives();
-        }
-
-        submitButton.style.display = 'none';
-        nextButton.style.display = 'inline';
-    });
-
-    nextButton.addEventListener('click', generateQuestion);
-
-    fullscreenButton.addEventListener('click', () => {
-        if (gameContainer.requestFullscreen) {
-            gameContainer.requestFullscreen();
-        } else if (gameContainer.mozRequestFullScreen) { // Firefox
-            gameContainer.mozRequestFullScreen();
-        } else if (gameContainer.webkitRequestFullscreen) { // Chrome, Safari y Opera
-            gameContainer.webkitRequestFullscreen();
-        } else if (gameContainer.msRequestFullscreen) { // IE/Edge
-            gameContainer.msRequestFullscreen();
-        }
-    });
-
-    setInterval(updateTimer, 1000); // Actualiza el temporizador cada segundo
-
-    resetGame();
-});
+        const correctAnswer
+::contentReference[oaicite:0]{index=0}
+ 
