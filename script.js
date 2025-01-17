@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         timeLeft = 300;
         updateLives();
         updateScore();
+        generateQuestion();
     }
 
     submitButton.addEventListener('click', () => {
