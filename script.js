@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             livesElement.appendChild(heart);
         }
         if (lives === 0) {
-            alert('Has perdido todas tus vidas. El juego se reiniciará. Puntos obtenidos: ${score}');
+            alert(`Has perdido todas tus vidas. El juego se reiniciará. Puntos obtenidos: ${score}`);
             resetGame();
         }
     }
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (timeLeft > 0) {
             timeLeft--;
         } else {
-            alert('El tiempo ha terminado. El juego se reiniciará. Puntos obtenidos: ${score}');
+            alert(`El tiempo ha terminado. El juego se reiniciará. Puntos obtenidos: ${score}`);
             resetGame();
         }
     }
