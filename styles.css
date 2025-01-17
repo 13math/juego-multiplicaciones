@@ -6,27 +6,26 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f4f4f4;
+    font-size: 20px; /* Aumenta el tamaño de la fuente */
 }
 
 .container {
     background: #fff;
-    padding: 40px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 800px; /* Ancho del contenedor */
 }
 
 #question-container {
     margin-bottom: 20px;
-    font-size: 24px; /* Tamaño de la fuente en el input */
+    font-size: 24px;
 }
 
 #answer {
-    width: 80px; /* Ancho del campo de entrada */
-    height: 40px; /* Alto del campo de entrada */
+    width: 60px;
     text-align: center;
-    font-size: 24px; /* Tamaño de la fuente en el input */
+    font-size: 24px; /* Aumenta el tamaño de la fuente en el input */
 }
 
 #feedback {
@@ -37,14 +36,26 @@ body {
 #next {
     display: none;
     margin-top: 20px;
+    font-size: 18px; /* Aumenta el tamaño del botón */
+    padding: 10px 20px; /* Aumenta el tamaño del botón */
+}
+
+#submit {
+    font-size: 18px; /* Aumenta el tamaño del botón */
+    padding: 10px 20px; /* Aumenta el tamaño del botón */
 }
 
 #timer, #score {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#lives {
     margin-bottom: 10px;
 }
 
 .heart {
     color: red;
     font-size: 24px; /* Tamaño del corazón */
-    margin: 0 2px;
+    margin: 0 5px;
 }
