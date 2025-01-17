@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let lives = 3; // Número inicial de vidas
     let score = 0; // Puntuación inicial
     let timeLeft = 300; // Tiempo en segundos (5 minutos)
-    let timerInterval;
 
     function generateQuestion() {
         multiplicand = Math.floor(Math.random() * 10) + 1;
@@ -24,8 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         feedbackElement.textContent = '';
         nextButton.style.display = 'none';
         submitButton.style.display = 'inline';
-        answerInput.disabled = false;
-        answerInput.focus();
     }
 
     function updateLives() {
@@ -44,13 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateScore() {
-        scoreElement.textContent = `Puntos: ${score}`;
+        scoreElement.textContent = Puntos: ${score};
     }
 
     function updateTimer() {
         const minutes = Math.floor(timeLeft / 60);
         const seconds = timeLeft % 60;
-        timerElement.textContent = `Tiempo restante: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        timerElement.textContent = Tiempo restante: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')};
         if (timeLeft > 0) {
             timeLeft--;
         } else {
@@ -60,39 +57,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resetGame() {
-        clearInterval(timerInterval);
         lives = 3;
         score = 0;
         timeLeft = 300;
         updateLives();
         updateScore();
         generateQuestion();
-        timerInterval = setInterval(updateTimer, 1000); // Reinicia el temporizador
     }
 
     submitButton.addEventListener('click', () => {
         const userAnswer = parseInt(answerInput.value, 10);
         const correctAnswer = multiplicand * multiplier;
+
         if (userAnswer === correctAnswer) {
             feedbackElement.textContent = '¡Correcto!';
             feedbackElement.style.color = 'green';
             score += 10; // Incrementa la puntuación por respuesta correcta
             updateScore();
-            submitButton.style.display = 'none';
-            nextButton.style.display = 'inline';
         } else {
-            feedbackElement.textContent = `Incorrecto. La respuesta correcta era ${correctAnswer}.`;
+            feedbackElement.textContent = Incorrecto. La respuesta correcta es ${correctAnswer}.;
             feedbackElement.style.color = 'red';
             lives--;
             updateLives();
-            submitButton.style.display = 'none';
-            nextButton.style.display = 'inline';
         }
-        answerInput.disabled = true;
+
+        submitButton.style.display = 'none';
+        nextButton.style.display = 'inline';
     });
 
     nextButton.addEventListener('click', generateQuestion);
 
-    // Inicia el juego
+    setInterval(updateTimer, 1000); // Actualiza el temporizador cada segundo
+
     resetGame();
 });
