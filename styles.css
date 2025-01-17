@@ -11,10 +11,13 @@ body {
 
 .container {
     background: #fff;
-    padding: 20px;
+    padding: 40px; /* Aumenta el padding para un contenedor más grande */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 80%; /* Ajusta el ancho del contenedor */
+    max-width: 800px; /* Establece un ancho máximo */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
 }
 
 #question-container {
