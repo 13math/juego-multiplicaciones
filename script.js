@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const livesElement = document.getElementById('lives');
     const scoreElement = document.getElementById('score');
     const timerElement = document.getElementById('timer');
+    const fullscreenButton = document.getElementById('fullscreen');
+    const gameContainer = document.getElementById('game-container');
 
     let multiplicand, multiplier;
     let lives = 3; // Número inicial de vidas
@@ -35,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             livesElement.appendChild(heart);
         }
         if (lives === 0) {
-            alert('Has perdido todas tus vidas. El juego se reiniciará.');
+            alert(`Has perdido todas tus vidas. El juego se reiniciará. Puntuación final: ${score}`);
             resetGame();
         }
     }
@@ -51,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (timeLeft > 0) {
             timeLeft--;
         } else {
-            alert('El tiempo ha terminado. El juego se reiniciará.');
+            alert(`El tiempo ha terminado. El juego se reiniciará. Puntuación final: ${score}`);
             resetGame();
         }
     }
@@ -86,6 +88,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     nextButton.addEventListener('click', generateQuestion);
+
+    fullscreenButton.addEventListener('click', () => {
+        if (gameContainer.requestFullscreen) {
+            gameContainer.requestFullscreen();
+        } else if (gameContainer.mozRequestFullScreen) { // Firefox
+            gameContainer.mozRequestFullScreen();
+        } else if (gameContainer.webkitRequestFullscreen) { // Chrome, Safari y Opera
+            gameContainer.webkitRequestFullscreen();
+        } else if (gameContainer.msRequestFullscreen) { // IE/Edge
+            gameContainer.msRequestFullscreen();
+        }
+    });
 
     setInterval(updateTimer, 1000); // Actualiza el temporizador cada segundo
 
