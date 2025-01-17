@@ -57,12 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resetGame() {
+        generateQuestion();
         lives = 3;
         score = 0;
         timeLeft = 300;
         updateLives();
         updateScore();
-        generateQuestion();
     }
 
     submitButton.addEventListener('click', () => {
