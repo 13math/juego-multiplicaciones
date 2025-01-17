@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function endGame(message) {
         clearInterval(timerInterval);
-        alert(message);
         // Ocultar elementos del juego
         submitButton.style.display = 'none';
         nextButton.style.display = 'none';
