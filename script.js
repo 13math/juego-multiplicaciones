@@ -72,6 +72,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     submitButton.addEventListener('click', () => {
         const userAnswer = parseInt(answerInput.value, 10);
-        const correctAnswer
-::contentReference[oaicite:0]{index=0}
- 
+        const correctAnswer = multiplicand * multiplier;
+        if (userAnswer === correctAnswer) {
+            feedbackElement.textContent = '¡Correcto!';
+            feedbackElement.style.color = 'green';
+            score += 10; // Incrementa la puntuación por respuesta correcta
+            updateScore();
+            submitButton.style.display = 'none';
+            nextButton.style.display = 'inline';
+        } else {
+            feedbackElement.textContent = `Incorrecto. La respuesta correcta era ${correctAnswer}.`;
+            feedbackElement.style.color = 'red';
+            lives--;
+            updateLives();
+            submitButton.style.display = 'none';
+            nextButton.style.display = 'inline';
+        }
+        answerInput.disabled = true;
+    });
+
+    nextButton.addEventListener('click', generateQuestion);
+
+    // Inicia el juego
+    resetGame();
+});
