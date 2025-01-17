@@ -29,6 +29,17 @@ body {
     font-size: 24px; /* Tamaño de la fuente en el input */
 }
 
+.btn {
+    font-size: 20px; /* Tamaño de la fuente del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    margin-top: 10px; /* Margen superior para separación */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 5px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+}
+
 #feedback {
     margin-top: 10px;
     font-weight: bold;
