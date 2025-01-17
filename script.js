@@ -41,13 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateScore() {
-        scoreElement.textContent = Puntos: ${score};
+        scoreElement.textContent = `Puntos: ${score}`;
     }
 
     function updateTimer() {
         const minutes = Math.floor(timeLeft / 60);
         const seconds = timeLeft % 60;
-        timerElement.textContent = Tiempo restante: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')};
+        timerElement.textContent = `Tiempo restante: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         if (timeLeft > 0) {
             timeLeft--;
         } else {
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             score += 10; // Incrementa la puntuación por respuesta correcta
             updateScore();
         } else {
-            feedbackElement.textContent = Incorrecto. La respuesta correcta es ${correctAnswer}.;
+            feedbackElement.textContent = `Incorrecto. La respuesta correcta es ${correctAnswer}.`;
             feedbackElement.style.color = 'red';
             lives--;
             updateLives();
